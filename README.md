@@ -1,5 +1,3 @@
-![](https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_120,w_120,f_auto,b_white,q_auto:eco/ajracsdqu5gmyfl6nai0)
-
 # Prediction of wind and solar power generation
 
 ## Content
@@ -19,7 +17,7 @@ This project focuses on the prediction of wind and solar power generation using 
 ## Introduction
 The share of renewable energy in the German energy mix has been rapidly growing in the recent years. In 2019, renewable energy amounted for ca. 46% of the total net electricity generation in Germany. Wind energy alone generated ca. 25% of the electricity produced, thus being the #1 energy source before brown coal (~20%) and nuclear energy (~14%) in the country that year. Solar (photovoltaic, PV) energy generated ca. 9% of the net German electricity in 2019. 
 
-Since wind and solar energy are by nature intermittent and since both sources have a significant share in the electricity mix (~ 33%), their integration into the system poses a major challenge, namely to maintain balance in the system between electricity supply and demand. The intermittence and the non-controllable characteristics of the wind and solar production bring a number of other problems such as voltage fluctuations, local power quality and stability issues.
+Since wind and solar energy are by nature intermittent and since both sources have a significant share in the electricity mix (~33%), their integration into the system poses a major challenge, namely to maintain balance in the system between electricity supply and demand. The intermittence and the non-controllable characteristics of the wind and solar production bring a number of other problems such as voltage fluctuations, local power quality and stability issues.
 
 Thus, forecasting the output power of wind and solar systems is required for the effective operation of the power grid or for the optimal management of the energy fluxes occurring into the system. It is also necessary for estimating the reserves, for scheduling the power system (i.e. starting a power plant needs between 5 min for a hydraulic unit, 10min to 1h for fossil-fired power plants to 40 hours for a nuclear reactor), for congestion management, for the optimal management of the power storage and for trading the produced power in the electricity market and finally to achieve a reduction of the costs of electricity production. 
 
@@ -84,14 +82,14 @@ For the present project, we used three machine learning techniques.
 
 ### Linear Regression model
 The output of a linear regression algorithm is a linear function of the input:
-f:\mathbb{R}^{n}\rightarrow \mathbb{R}, \, y\hat{}\equiv f(\textup{x})= \beta ^{\textup{T}}\textup{x}+\beta _{\textup{0}}
-[]!(https://latex.codecogs.com/gif.latex?f%3A%5Cmathbb%7BR%7D%5E%7Bn%7D%5Crightarrow%20%5Cmathbb%7BR%7D%2C%20%5C%2C%20y%5Chat%7B%7D%5Cequiv%20f%28%5Ctextup%7Bx%7D%29%3D%20%5Cbeta%20%5E%7B%5Ctextup%7BT%7D%7D%5Ctextup%7Bx%7D&plus;%5Cbeta%20_%7B%5Ctextup%7B0%7D%7D)
+
+[LR]!(https://latex.codecogs.com/gif.latex?f%3A%5Cmathbb%7BR%7D%5E%7Bn%7D%5Crightarrow%20%5Cmathbb%7BR%7D%2C%20%5C%2C%20y%5Chat%7B%7D%5Cequiv%20f%28%5Ctextup%7Bx%7D%29%3D%20%5Cbeta%20%5E%7B%5Ctextup%7BT%7D%7D%5Ctextup%7Bx%7D&plus;%5Cbeta%20_%7B%5Ctextup%7B0%7D%7D)
 where 
-\beta =\left ( \beta_{1}, ...,\, \beta_{n} \right )\in  \mathbb{R}^{n}
-[]!(https://latex.codecogs.com/gif.latex?%5Cbeta%20%3D%5Cleft%20%28%20%5Cbeta_%7B1%7D%2C%20...%2C%5C%2C%20%5Cbeta_%7Bn%7D%20%5Cright%20%29%5Cin%20%5Cmathbb%7BR%7D%5E%7Bn%7D)
+
+[beta]!(https://latex.codecogs.com/gif.latex?%5Cbeta%20%3D%5Cleft%20%28%20%5Cbeta_%7B1%7D%2C%20...%2C%5C%2C%20%5Cbeta_%7Bn%7D%20%5Cright%20%29%5Cin%20%5Cmathbb%7BR%7D%5E%7Bn%7D)
 is a vector of parameters.The objective is to find the parameters which minimize the mean squared error:
-\textup{argmin}_{\beta ,\beta _{0}}\frac{1}{N}\sum_{i=1}^{N}\left \( y_{i}-\beta ^{\textup{T}}\textup{x}_{i}-\beta _{0} \right )^{2}
-[]!(https://latex.codecogs.com/gif.latex?%5Ctextup%7Bargmin%7D_%7B%5Cbeta%20%2C%5Cbeta%20_%7B0%7D%7D%5Cfrac%7B1%7D%7BN%7D%5Csum_%7Bi%3D1%7D%5E%7BN%7D%5Cleft%20%5C%28%20y_%7Bi%7D-%5Cbeta%20%5E%7B%5Ctextup%7BT%7D%7D%5Ctextup%7Bx%7D_%7Bi%7D-%5Cbeta%20_%7B0%7D%20%5Cright%20%29%5E%7B2%7D)
+
+[MSE]!(https://latex.codecogs.com/gif.latex?%5Ctextup%7Bargmin%7D_%7B%5Cbeta%20%2C%5Cbeta%20_%7B0%7D%7D%5Cfrac%7B1%7D%7BN%7D%5Csum_%7Bi%3D1%7D%5E%7BN%7D%5Cleft%20%5C%28%20y_%7Bi%7D-%5Cbeta%20%5E%7B%5Ctextup%7BT%7D%7D%5Ctextup%7Bx%7D_%7Bi%7D-%5Cbeta%20_%7B0%7D%20%5Cright%20%29%5E%7B2%7D)
 This can be achieved using LinearRegression from the scikit-learn library.
 
 ### Decision Tree Regression model
@@ -100,19 +98,16 @@ The idea behind the decision tree technique is that a response or class Y from i
 Decision trees are sensitive to the specific data on which they are trained. If the training data is changed the resulting decision tree can be quite different and in turn the predictions can be quite different. Also Decision trees are computationally expensive to train, carry a big risk of overfitting, and tend to find local optima because they can’t go back after they have made a split. To address these weaknesses, we turn to Random Forest, which illustrates the power of combining many decision trees into one model.
 
 ### Random Forest Regression model
-Random forest is an ensemble method, i.e. a technique that combines the predictions from multiple machine learning algorithms (in this case decision trees) together to make more accurate predictions than any individual model. Random forest is a bagging technique, meaning that it operates random sampling with replacement. It allows us to better understand for bias and variance with the dataset. Bagging makes each model run independently and then aggregates the outputs at the end without preference to any model. It operates by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees. (https://towardsdatascience.com/random-forest-and-its-implementation-71824ced454f)
+Random forest is an ensemble method, i.e. a technique that combines the predictions from multiple machine learning algorithms (in this case decision trees) together to make more accurate predictions than any individual model. Random forest is a bagging technique, meaning that it operates random sampling with replacement. It allows us to better understand for bias and variance with the dataset. Bagging makes each model run independently and then aggregates the outputs at the end without preference to any model. It operates by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees.
 
 ### Performance metrics
 - Coefficient of determination
 The performance measure that LinearRegression gives by default is the coefficient of determination R² of the prediction. It measures how well the predictions approximate the true values. A value close to 1 means that the regression makes predictions which are close to the true values. It is formally computed using the formula:
-
-[]!(https://latex.codecogs.com/gif.latex?%5Cmathit%7BR%7D%5E%7B2%7D%3D1-%5Cfrac%7B%5Csum_%7Bi%7D%5E%7B%7D%5Cleft%20%28%20y_%7Bi%7D%20-y%5Cwidehat%7B%7D_%7Bi%7D%5Cright%20%29%5E%7B2%7D%7D%7B%5Csum_%7Bi%7D%5E%7B%7D%5Cleft%20%28%20y_%7Bi%7D%20-y%5Cbar%7B%7D%5Cright%20%29%5E%7B2%7D%7D)
-\mathit{R}^{2}=1-\frac{\sum_{i}^{}\left ( y_{i} -y\widehat{}_{i}\right )^{2}}{\sum_{i}^{}\left ( y_{i} -y\bar{}\right )^{2}}
+[r2]!(https://latex.codecogs.com/gif.latex?%5Cmathit%7BR%7D%5E%7B2%7D%3D1-%5Cfrac%7B%5Csum_%7Bi%7D%5E%7B%7D%5Cleft%20%28%20y_%7Bi%7D%20-y%5Cwidehat%7B%7D_%7Bi%7D%5Cright%20%29%5E%7B2%7D%7D%7B%5Csum_%7Bi%7D%5E%7B%7D%5Cleft%20%28%20y_%7Bi%7D%20-y%5Cbar%7B%7D%5Cright%20%29%5E%7B2%7D%7D)
 
 - Root mean squared error
 A common performance metric is the Root Mean Squared Error (RMSE), given by:
-RMSE=\sqrt{\frac{\sum_{i=1}^{n}\left ( yi-y\hat{}_{i} \right )^{2}}{n}}
-[]!(https://latex.codecogs.com/gif.latex?RMSE%3D%5Csqrt%7B%5Cfrac%7B%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%5Cleft%20%28%20yi-y%5Chat%7B%7D_%7Bi%7D%20%5Cright%20%29%5E%7B2%7D%7D%7Bn%7D%7D)
+[RMSE]!(https://latex.codecogs.com/gif.latex?RMSE%3D%5Csqrt%7B%5Cfrac%7B%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%5Cleft%20%28%20yi-y%5Chat%7B%7D_%7Bi%7D%20%5Cright%20%29%5E%7B2%7D%7D%7Bn%7D%7D)
 
 ## Modelling and results
 ### Prediction of wind and solar power generation from weather data at time t
