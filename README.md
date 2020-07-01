@@ -84,12 +84,15 @@ For the present project, we used three machine learning techniques.
 The output of a linear regression algorithm is a linear function of the input:
 
 ![](https://latex.codecogs.com/gif.latex?f%3A%5Cmathbb%7BR%7D%5E%7Bn%7D%5Crightarrow%20%5Cmathbb%7BR%7D%2C%20%5C%2C%20y%5Chat%7B%7D%5Cequiv%20f%28%5Ctextup%7Bx%7D%29%3D%20%5Cbeta%20%5E%7B%5Ctextup%7BT%7D%7D%5Ctextup%7Bx%7D&plus;%5Cbeta%20_%7B%5Ctextup%7B0%7D%7D)
+
 where 
 
 ![](https://latex.codecogs.com/gif.latex?%5Cbeta%20%3D%5Cleft%20%28%20%5Cbeta_%7B1%7D%2C%20...%2C%5C%2C%20%5Cbeta_%7Bn%7D%20%5Cright%20%29%5Cin%20%5Cmathbb%7BR%7D%5E%7Bn%7D)
+
 is a vector of parameters.The objective is to find the parameters which minimize the mean squared error:
 
 ![](https://latex.codecogs.com/gif.latex?%5Ctextup%7Bargmin%7D_%7B%5Cbeta%20%2C%5Cbeta%20_%7B0%7D%7D%5Cfrac%7B1%7D%7BN%7D%5Csum_%7Bi%3D1%7D%5E%7BN%7D%5Cleft%20%5C%28%20y_%7Bi%7D-%5Cbeta%20%5E%7B%5Ctextup%7BT%7D%7D%5Ctextup%7Bx%7D_%7Bi%7D-%5Cbeta%20_%7B0%7D%20%5Cright%20%29%5E%7B2%7D)
+
 This can be achieved using LinearRegression from the scikit-learn library.
 
 ### Decision Tree Regression model
@@ -103,10 +106,12 @@ Random forest is an ensemble method, i.e. a technique that combines the predicti
 ### Performance metrics
 - Coefficient of determination
 The performance measure that LinearRegression gives by default is the coefficient of determination R² of the prediction. It measures how well the predictions approximate the true values. A value close to 1 means that the regression makes predictions which are close to the true values. It is formally computed using the formula:
+
 ![](https://latex.codecogs.com/gif.latex?%5Cmathit%7BR%7D%5E%7B2%7D%3D1-%5Cfrac%7B%5Csum_%7Bi%7D%5E%7B%7D%5Cleft%20%28%20y_%7Bi%7D%20-y%5Cwidehat%7B%7D_%7Bi%7D%5Cright%20%29%5E%7B2%7D%7D%7B%5Csum_%7Bi%7D%5E%7B%7D%5Cleft%20%28%20y_%7Bi%7D%20-y%5Cbar%7B%7D%5Cright%20%29%5E%7B2%7D%7D)
 
 - Root mean squared error
 A common performance metric is the Root Mean Squared Error (RMSE), given by:
+
 ![](https://latex.codecogs.com/gif.latex?RMSE%3D%5Csqrt%7B%5Cfrac%7B%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%5Cleft%20%28%20yi-y%5Chat%7B%7D_%7Bi%7D%20%5Cright%20%29%5E%7B2%7D%7D%7Bn%7D%7D)
 
 ## Modelling and results
