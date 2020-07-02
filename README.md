@@ -165,9 +165,9 @@ Depending on the models (historical/hybrid data, linear regression/random forest
 Thanks to machine learning techniques, we could build models that predicted efficiently wind and solar power generation, whether the models focused on the prediction at time t from weather data or on forecasts at different time horizons from historical data and hybrid models. This work constitutes a first step in the development of more accurate prediction models, that would explore further algorithm such as artifitial neural networks and k-nearest neighbors. Also, we could feed additional features to the dataset, such as seasonality (winter, spring, summer and fall) and diurnality (day/night) in order to gain accuracy in the prediction models. Lastly, it would be beneficial to work on a dataset from a single production site (solar/wind park) where the specific installed capacity and weather data would help build more accurate prediction models.
 
 ## Notebooks
-1. [data cleaning and pre-processing](https://github.com/jsialell/predicting_wind_solar_power/blob/master/notebooks/1_data_cleaning.ipynb)
-2. [prediction of solar power generation from weather data at time t](https://github.com/jsialell/predicting_wind_solar_power/blob/master/notebooks/2_1_solar_power_generation_prediction_weather_data.ipynb)
-3. [prediction of wind power generation from weather data at time t](https://github.com/jsialell/predicting_wind_solar_power/blob/master/notebooks/2_2_wind_power_generation_prediction_weather_data.ipynb)
+1. [Data cleaning and pre-processing](https://github.com/jsialell/predicting_wind_solar_power/blob/master/notebooks/1_data_cleaning.ipynb)
+2. [Prediction of solar power generation from weather data at time t](https://github.com/jsialell/predicting_wind_solar_power/blob/master/notebooks/2_1_solar_power_generation_prediction_weather_data.ipynb)
+3. [Prediction of wind power generation from weather data at time t](https://github.com/jsialell/predicting_wind_solar_power/blob/master/notebooks/2_2_wind_power_generation_prediction_weather_data.ipynb)
 4. [Forecasting solar power generation at different time horizons](https://github.com/jsialell/predicting_wind_solar_power/blob/master/notebooks/3_1_solar_power_generation_forecast.ipynb)
 5. [Forecasting wind power generation at different time horizons](https://github.com/jsialell/predicting_wind_solar_power/blob/master/notebooks/3_2_wind_power_generation_forecast.ipynb)
 
